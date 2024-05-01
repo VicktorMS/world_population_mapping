@@ -19,6 +19,8 @@ world_pop_2010 = [
         if country['Year'] == '2010' and get_country_code(country['Country Name'])
     ]
 
+world_2010_code_pop = {country['Country Code']: country['Value'] for country in world_pop_2010}
+
 
 print(world_pop_2010)
 
