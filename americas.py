@@ -2,11 +2,14 @@ import pygal
 
 
 wm = pygal.maps.world.World()
-wm.title = 'América do Sul, Norte e Central'
+wm.title = 'Populações da America do Norte'
 
-wm.add('America do Sul', ['ar', 'bo', 'br', 'cl', 'co', 'ec', 'gf',
-       'gy', 'pe', 'py', 'sr', 'uy', 've'])
-wm.add('America Central', ['bz', 'cr', 'gt', 'hn', 'ni', 'pa', 'sv'])
-wm.add('America do Norte', ['ca', 'mx', 'us'])
+wm.add('America do Norte',
+        {
+            'ca': 3123145123, 
+            'mx': 1321565657, 
+            'us': 4545567689
+        }
+    )
 
-wm.render_to_file('examples/simple_americas.svg')
+wm.render_to_file('examples/north_america_pop.svg')
