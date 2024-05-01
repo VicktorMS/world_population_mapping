@@ -19,10 +19,24 @@ world_pop_2010 = [
         if country['Year'] == '2010' and get_country_code(country['Country Name'])
     ]
 
-world_2010_code_pop = {country['Country Code']: country['Value'] for country in world_pop_2010}
+
+def get_pop_range(pop_dict):
+    cc_pops_1, cc_pops_2, cc_pops_3  = {}, {}, {}
+
+    for country in pop_dict:
+        if country['Value'] < 10_000_000:
+            cc_pops_1[country['Country Code']] = country['Value']
+        elif country['Value'] < 1_000_000_000:
+            cc_pops_2[country['Country Code']] = country['Value']
+        else: 
+            cc_pops_3[country['Country Code']] = country['Value']
+    
+    return cc_pops_1, cc_pops_2, cc_pops_3 
 
 
-print(world_pop_2010)
+
+world_pop_less_10m, world_pop_less_1b, world_pop_over_1b = get_pop_range(world_pop_2010)
+
 
 
 
