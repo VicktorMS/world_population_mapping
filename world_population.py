@@ -37,6 +37,7 @@ def get_pop_range(pop_dict):
 
 world_pop_less_10m, world_pop_less_1b, world_pop_over_1b = get_pop_range(world_pop_2010)
 
+print(len(world_pop_less_10m), len(world_pop_less_1b), len(world_pop_over_1b))
 
 
 
@@ -44,6 +45,3 @@ world_pop_less_10m, world_pop_less_1b, world_pop_over_1b = get_pop_range(world_p
 
 
 
-
-
-#print(next((country for country in world_population if country['Country Name'] == 'Brazil'), None))
